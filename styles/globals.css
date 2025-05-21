@@ -10,6 +10,7 @@ body {
   min-inline-size: 375px;
   max-inline-size: 1440px;
   margin: 0 auto;
+  font-size: 18px;
 }
 
 h1,
@@ -20,6 +21,11 @@ h5,
 h6,
 p {
   margin: 0;
+  font-size: 18px;
+}
+
+h4 {
+  font-weight: 400;
 }
 
 ul {
@@ -39,4 +45,45 @@ a {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+/* Дополнительные стили */
+.title {
+  font-weight: 700;
+  line-height: 0.83;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: #db00ff;
+}
+
+.title-decor {
+  color: #000028;
+  background-color: var(--color-accent);
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+.decorated-zone::before {
+  top: 0;
+  right: 0;
+  border-top: 1px solid var(--color-accent);
+  border-right: 1px solid var(--color-accent);
+}
+
+.decorated-zone::after {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid var(--color-accent);
+  border-left: 1px solid var(--color-accent);
+}
+
+@media (width >= 768px) {
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
