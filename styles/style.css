@@ -3,6 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: var(--font-family-base);
+  background-color: var(--bg-color-section);
   background: var(--bg-image-page) center;
   background-size: cover;
   background-attachment: fixed;
@@ -48,7 +49,7 @@
 
 .header__theme-menu {
   justify-self: end;
-  color: var(--color-accent);
+  color: var(--color-menu);
 }
 
 .header__theme-menu-list {
@@ -65,19 +66,20 @@
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid var(--color-menu);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:focus {
   outline: none;
 }
 
-.header__theme-menu-button:hover {
-  outline: 1px solid rgb(255, 0, 112, 0.4);
+.header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+  outline: 1px solid color-mix(in oklab, var(--color-menu) 40%, transparent);
 }
 
 .header__theme-menu-button:focus-visible {
-  box-shadow: 0 1px 0 var(--color-accent);
+  box-shadow: 0 1px 0 var(--color-menu);
   outline: none;
 }
 
@@ -137,7 +139,7 @@
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   margin-block-end: 21px;
-  color: var(--color-accent);
+  color: var(--color-subtitle);
 }
 
 .section__list {

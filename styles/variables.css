@@ -6,10 +6,12 @@
 :root {
   --font-family-base: "IBM Plex mono", serif;
 
-  --color-accent: #ff0070;
-
   --bg-image-page: url(./../images/cover-image-dark.png);
-
+  --color-accent: #ff0070;
+  --color-title: #db00ff;
+  --color-subtitle: #ff0070;
+  --color-description: #000028;
   --bg-color-section: #000028;
   --color-section: #f1b2ce;
+  --color-menu: #ff0070;
 }

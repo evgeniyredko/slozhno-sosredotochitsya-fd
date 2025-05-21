@@ -52,11 +52,11 @@ a {
   font-weight: 700;
   line-height: 0.83;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  color: #db00ff;
+  color: var(--color-title);
 }
 
 .title-decor {
-  color: #000028;
+  color: var(--color-description);
   background-color: var(--color-accent);
 }
 
