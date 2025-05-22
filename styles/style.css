@@ -1,10 +1,15 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 18px;
+}
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-base), monospace;
   background: var(--bg-image-page) center;
-  background-color: var(--bg-color-section);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -132,7 +137,6 @@
   display: grid;
   padding: 10px;
   padding-block-start: 40px;
-  background-color: var(--bg-color-section);
 }
 
 .section__title {
@@ -147,16 +151,18 @@
   gap: 21px;
 }
 
-.section-card__title {
-  margin-block-end: 10px;
+.section-card {
+  display: grid;
+  gap: 10px;
 }
 
 .section-card__subtitle {
-  margin-block: 20px 10px;
+  font-weight: 400;
+  margin-block-start: 10px;
 }
 
 .section-card__text {
-  color: var(--color-section);
+  color: var(--color-text);
   line-height: 1.3;
 }
 
@@ -166,7 +172,7 @@
 }
 
 .section-card__link:hover {
-  border-bottom: 1px solid var(--color-section);
+  box-shadow: 0 1px 0 var(--color-text);
 }
 
 .section-card__link:focus {
@@ -174,7 +180,7 @@
 }
 
 .section-card__link:focus-visible {
-  outline: 1px solid var(--color-section);
+  outline: 1px solid var(--color-text);
 }
 
 @media (width >= 768px) {
@@ -185,33 +191,31 @@
     padding-block-start: 60px;
   }
 
-  .two-column .section__list {
-    display: grid;
+  .section__vertical .section__list {
     grid-template-columns: 1fr;
     grid-column: 2 / 4;
-    gap: 20px;
     margin-inline-start: 10px;
   }
 
-  .one-column {
+  .section__horizontal {
     row-gap: 0;
   }
 
-  .one-column .section__list {
+  .section__horizontal .section__list {
     grid-column: 1 / 4;
   }
 }
 
 @media (width >= 1024px) {
-  .one-column .section__list {
+  .section__horizontal .section__list {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .two-column .section__list {
+  .section__vertical .section__list {
     margin-inline-start: 0;
   }
 
-  .two-column {
+  .section__vertical {
     gap: 20px;
   }
 }
@@ -219,7 +223,6 @@
 /* Gallery */
 .gallery {
   padding: 42px 10px 40px;
-  background-color: var(--bg-color-section);
 }
 
 .gallery__title {
@@ -272,24 +275,22 @@
 /* Footer */
 .footer {
   padding: 10px;
-  background-color: var(--bg-color-section);
   block-size: 100vh;
   min-block-size: 640px;
 }
 
 .footer__inner {
   position: relative;
+  display: grid;
   inline-size: 100%;
   block-size: 100%;
 }
 
 .footer__title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   display: inline-block;
+  justify-self: center;
+  align-self: center;
   text-shadow: 2px 2px 0 var(--color-accent);
-  transform: translate(-50%, -50%);
 }
 
 @media (width >= 768px) {
@@ -307,7 +308,7 @@
 }
 
 .title-decor {
-  color: var(--color-description);
+  color: var(--color-decor-text);
   background-color: var(--color-accent);
 }
 
@@ -322,15 +323,15 @@
 .decorated-zone::before {
   top: 0;
   right: 0;
-  border-top: 1px solid var(--color-accent);
-  border-right: 1px solid var(--color-accent);
+  border-top: 1px solid var(--color-decor);
+  border-right: 1px solid var(--color-decor);
 }
 
 .decorated-zone::after {
   bottom: 0;
   left: 0;
-  border-bottom: 1px solid var(--color-accent);
-  border-left: 1px solid var(--color-accent);
+  border-bottom: 1px solid var(--color-decor);
+  border-left: 1px solid var(--color-decor);
 }
 
 @media (width >= 768px) {
